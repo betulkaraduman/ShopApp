@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    @* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> *@
+
+    <style>
+        .popular {
+            color: green;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar bg-primary navbar-dark navbar-expand-sm">
+        <div class="container">
+            <a href="/" class="navbar-brand">ShopApp</a>
+            <ul class="navbar-nav mr-auto">
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item"><a href="/products" class="nav-link">Product List</a></li>
+                }
+                else
+                {
+                    if (User.IsInRole("admin"))
+                    {
+                        <li class="nav-item"><a asp-controller="admin" asp-action="RoleList" class="nav-link">Roles</a></li>
+                        <li class="nav-item"><a asp-controller="admin" asp-action="categories" class="nav-link">Categories</a>
+                        </li>
+                        <li class="nav-item"><a asp-controller="admin" asp-action="products" class="nav-link">Admin Products</a></li>
+                        <li class="nav-item"><a asp-controller="admin" asp-action="UserList" class="nav-link">Users</a></li>
+                    }
+                    <li class="nav-item"><a href="/Cart" class="nav-link">Card</a></li>
+                    <li class="nav-item"><a href="/Orders" class="nav-link">Orders</a></li>
+                    <li class="nav-item"><a asp-controller="admin" asp-action="products" class="nav-link">Products</a></li>
+                }
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item"><a href="/account/manage" class="nav-link">@User.Identity.Name</a></li>
+                    <li class="nav-item"><a href="/account/logout" class="nav-link">Logout</a></li>
+                }
+                else
+                {
+                    <li class="nav-item"><a href="/account/login" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="/account/register" class="nav-link">Register</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

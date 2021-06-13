@@ -1,0 +1,12 @@
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\bin\Debug\netstandard2.0\shopApp.data.deps.json
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\bin\Debug\netstandard2.0\shopApp.data.dll
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\bin\Debug\netstandard2.0\shopApp.data.pdb
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\bin\Debug\netstandard2.0\shopApp.entity.dll
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\bin\Debug\netstandard2.0\shopApp.entity.pdb
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\obj\Debug\netstandard2.0\shopApp.data.csprojAssemblyReference.cache
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\obj\Debug\netstandard2.0\shopApp.data.AssemblyInfoInputs.cache
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\obj\Debug\netstandard2.0\shopApp.data.AssemblyInfo.cs
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\obj\Debug\netstandard2.0\shopApp.data.csproj.CoreCompileInputs.cache
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\obj\Debug\netstandard2.0\shopApp.data.csproj.CopyComplete
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\obj\Debug\netstandard2.0\shopApp.data.dll
+C:\Users\MONSTER\Desktop\DotNet\ShopApp\shopApp.data\obj\Debug\netstandard2.0\shopApp.data.pdb

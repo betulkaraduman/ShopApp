@@ -1,0 +1,52 @@
+@model Product
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+
+    <style>
+        .popular {
+            color: green;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card my-2">
+        <img src="~/img/@Model.ImageUrl" class="card-img-top" alt="">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <small class="text-muted">
+                <i class="fas fa-lira"></i>@Model.Price
+            </small>
+            @* <p class="card-text">@Model.Description</p> *@
+            @* <a href="/Product/update/@Model.Id" class="btn btn-primary btn-sm">Update</a>
+                <form method="POST" action="/product/delete" style="display:inline;">
+                <input type="hidden" name="Id" value="@Model.Id">
+                <button type="submit" class="btn btn-danger my-2 btn-sm" style="width: 90%;">Delete</button>
+                </form> *@
+            @* <a asp-controller="Product" asp-action="ListDetail" asp-route-id="@Model." class="btn
+                btn-primary">Details</a> *@
+        </div>
+        <div class="card-footer text-center">
+
+            <a asp-controller="shop" asp-action="Details" asp-route-productUrl="@Model.ProductUrl"
+                class="btn btn-primary btn-sm">Details</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <form asp-controller="Cart" asp-action="AddToCart" style="display: inline;" method="POST">
+                    <input type="hidden" name="ProductId" value="@Model.Id">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-primary btn-sm">Add To Card</button>
+                </form>
+            }
+        </div>
+    </div>
+</body>
+
+</html>

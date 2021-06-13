@@ -1,0 +1,46 @@
+@model CategoryModel
+<h2 class="h4">Create Category</h2>
+<hr>
+@if (TempData["message"] != null)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-warning">@TempData["message"]</div>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-controller="Admin" asp-action="CreateCategory" method="POST">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" asp-for="Name"></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" asp-for="Name">
+                    <span asp-validation-for="Name" class="text-danger"> </span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" asp-for="Url"></label>
+                <div class="col-sm-10">
+                    <textarea class="form-control" asp-for="Url"></textarea>
+                    <span asp-validation-for="Url" class="text-danger"> </span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary">Add Product</button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
+@section scripts{
+    <script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}

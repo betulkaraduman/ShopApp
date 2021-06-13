@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop App</title>
+    <link rel="stylesheet" href="/modules/bootstrap/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    
+    @RenderSection("Css",false)
+    <link rel="stylesheet" href="~/css/style.css">
+    <style>
+        .popular {
+            color: green;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+    @await Html.PartialAsync("_navbar")
+    @* @RenderSection("Header",false) *@
+
+    <main style="min-height: 424px !important;">
+        <div class="my-5">
+            <div class="container">
+                @if (TempData["message"] != null)
+                {
+                    <partial name="_ResultMessage" model="@(TempData.Get<AlertMessage>("message"))"></partial> 
+                }
+                @RenderBody()
+            </div>
+        </div>
+    </main>
+    <footer class="py-4 mt-4 bg-dark text-white text-center">
+        Shop App | 2021
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+    @RenderSection("scripts",false)
+</body>
+
+</html>
